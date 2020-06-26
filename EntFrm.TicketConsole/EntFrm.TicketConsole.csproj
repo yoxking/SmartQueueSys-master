@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35EAA11D-E090-417C-B526-B0C69E064310}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EntFrm.TicketConsole</RootNamespace>
+    <AssemblyName>EntFrm.TicketConsole</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.ETFHandProj1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NewTicketDebug\AxInterop.ETFHandProj1.dll</HintPath>
+    </Reference>
+    <Reference Include="EntFrm.Business.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntFrm.Business.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="EntFrm.Framework.Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntFrm.Framework.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentScheduler, Version=5.3.0.0, Culture=neutral, PublicKeyToken=b76503528a14ebd1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\FluentScheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ETFHandProj1, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\NewTicketDebug\Interop.ETFHandProj1.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TestDebug\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TestDebug\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TestDebug\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TestDebug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IMyPublicUtils\IPublicConsts.cs" />
+    <Compile Include="IMyViewModel\RUserModel.cs" />
+    <Compile Include="IPublicService\CommonService.cs" />
+    <Compile Include="IPublicService\InputDlgService.cs" />
+    <Compile Include="IPublicService\ScheduleService.cs" />
+    <Compile Include="ISettingDialog\ContextDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISettingDialog\ContextDialog.Designer.cs">
+      <DependentUpon>ContextDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoadForm.Designer.cs">
+      <DependentUpon>frmLoadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoginForm.Designer.cs">
+      <DependentUpon>frmLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainFrame.Designer.cs">
+      <DependentUpon>frmMainFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMssgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMssgForm.Designer.cs">
+      <DependentUpon>frmMssgForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSmartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSmartForm.Designer.cs">
+      <DependentUpon>frmSmartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyInputDialog\InputPlateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyInputDialog\InputPlateDialog.Designer.cs">
+      <DependentUpon>InputPlateDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyInputDialog\HandInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyInputDialog\HandInputDialog.Designer.cs">
+      <DependentUpon>HandInputDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IMyPublicUtils\IPublicEntity.cs" />
+    <Compile Include="IMyViewModel\BarcodeHook.cs" />
+    <Compile Include="IMyViewModel\IdCardModel.cs" />
+    <Compile Include="IMyViewModel\IDialogModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMyViewModel\IDialogModel.Designer.cs">
+      <DependentUpon>IDialogModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyInputDialog\InputPhoneDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyInputDialog\InputPhoneDialog.Designer.cs">
+      <DependentUpon>InputPhoneDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyInputDialog\InputIdcardDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyInputDialog\InputIdcardDialog.Designer.cs">
+      <DependentUpon>InputIdcardDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyInputDialog\InputPlateDialog2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyInputDialog\InputPlateDialog2.Designer.cs">
+      <DependentUpon>InputPlateDialog2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyInputDialog\InputPhoneDialog2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyInputDialog\InputPhoneDialog2.Designer.cs">
+      <DependentUpon>InputPhoneDialog2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyShowDialog\PrintingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyShowDialog\PrintingDialog.Designer.cs">
+      <DependentUpon>PrintingDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MyShowDialog\ScanBcodeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyShowDialog\ScanBcodeDialog.Designer.cs">
+      <DependentUpon>ScanBcodeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyShowDialog\ScanCardDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyShowDialog\ScanCardDialog.Designer.cs">
+      <DependentUpon>ScanCardDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyShowDialog\ScanDecardDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyShowDialog\ScanDecardDialog.Designer.cs">
+      <DependentUpon>ScanDecardDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\QServicePoint\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ISettingDialog\SettingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISettingDialog\SettingDialog.Designer.cs">
+      <DependentUpon>SettingDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IMyPublicUtils\IPublicHelper.cs" />
+    <Compile Include="IMyPublicUtils\IQueueService.cs" />
+    <Compile Include="IMyPublicUtils\IUserContext.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ISettingDialog\WindowDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ISettingDialog\WindowDialog.Designer.cs">
+      <DependentUpon>WindowDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ISettingDialog\ContextDialog.resx">
+      <DependentUpon>ContextDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoadForm.resx">
+      <DependentUpon>frmLoadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoginForm.resx">
+      <DependentUpon>frmLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainFrame.resx">
+      <DependentUpon>frmMainFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMssgForm.resx">
+      <DependentUpon>frmMssgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSmartForm.resx">
+      <DependentUpon>frmSmartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyInputDialog\InputPhoneDialog.resx">
+      <DependentUpon>InputPhoneDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyInputDialog\InputPlateDialog.resx">
+      <DependentUpon>InputPlateDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyInputDialog\HandInputDialog.resx">
+      <DependentUpon>HandInputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyInputDialog\InputIdcardDialog.resx">
+      <DependentUpon>InputIdcardDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyInputDialog\InputPlateDialog2.resx">
+      <DependentUpon>InputPlateDialog2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyInputDialog\InputPhoneDialog2.resx">
+      <DependentUpon>InputPhoneDialog2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyShowDialog\PrintingDialog.resx">
+      <DependentUpon>PrintingDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyShowDialog\ScanBcodeDialog.resx">
+      <DependentUpon>ScanBcodeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyShowDialog\ScanCardDialog.resx">
+      <DependentUpon>ScanCardDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyShowDialog\ScanDecardDialog.resx">
+      <DependentUpon>ScanDecardDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISettingDialog\SettingDialog.resx">
+      <DependentUpon>SettingDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISettingDialog\WindowDialog.resx">
+      <DependentUpon>WindowDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\QServicePoint\QueueService.wsdl" />
+    <None Include="Service References\QServicePoint\QueueService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QServicePoint\QueueService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\QServicePoint\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QServicePoint\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QServicePoint\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QServicePoint\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="MyImageAsset\ResScanBarcode.png" />
+    <Content Include="MyImageAsset\Res_Source.png" />
+    <None Include="MyImageAsset\ResScanDecard.png" />
+    <None Include="MyImageAsset\ResScanCard.png" />
+    <None Include="MyImageAsset\ResPrintTicket.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
